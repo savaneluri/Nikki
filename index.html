@@ -1,8 +1,338 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Nikki 💙</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background:
+    radial-gradient(circle at top, #dbeafe, #bfdbfe),
+    linear-gradient(180deg, #e0f2fe, #c7d2fe);
+  color: #0f172a;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 20px;
+}
+
+section.active {
+  display: flex;
+  animation: fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin-bottom: 18px;
+}
+
+.subtitle {
+  max-width: 720px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* Buttons */
+button {
+  margin-top: 40px;
+  padding: 14px 38px;
+  font-size: 1.05rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  color: white;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 18px;
+  opacity: 0.35;
+  animation: float 9s linear infinite;
+}
+@keyframes float {
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  max-width: 1100px;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  transition: transform 0.4s ease, opacity 0.6s ease;
+  opacity: 0;
+}
+.gallery img.show {
+  opacity: 1;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Letter */
+.letter {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(16px);
+  padding: 60px 40px;
+  border-radius: 36px;
+  max-width: 900px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.letter h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.6rem;
+}
+
+.letter p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  line-height: 1.9;
+  margin-top: 30px;
+  white-space: pre-wrap;
+}
+
+.signature {
+  margin-top: 40px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.3rem;
+}
+
+/* Choice */
+.choice { position: relative; }
+
+#noBtn {
+  position: absolute;
+  background: #94a3b8;
+}
+
+.popup {
+  margin-top: 25px;
+  font-size: 1.05rem;
+}
+
+/* Final */
+.final-card {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(16px);
+  padding: 45px;
+  border-radius: 36px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+  max-width: 700px;
+}
+
+.final-card img {
+  width: 100%;
+  border-radius: 28px;
+  margin-bottom: 22px;
+}
+
+.final-caption {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .letter { padding: 40px 24px; }
+  .letter h1 { font-size: 3rem; }
+}
+</style>
+</head>
+
 <body>
-  <h1>It works</h1>
-  <img src="images/img1.png" width="300">
-  <img src="images/img2.png" width="300">
+
+<!-- INTRO -->
+<section class="active">
+  <h1>Hey Babuuu 💙</h1>
+  <p class="subtitle">
+    This isn’t for a special day.<br>
+    It’s just a reminder — steady, gentle, and real.
+  </p>
+  <button onclick="next()">Come here</button>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <h1>This is Us 🌻</h1>
+  <div class="gallery" id="gallery">
+    <!-- 20 images -->
+    <img src="images/img1.png">
+    <img src="images/img2.png">
+    <img src="images/img3.png">
+    <img src="images/img4.png">
+    <img src="images/img5.png">
+    <img src="images/img6.png">
+    <img src="images/img7.png">
+    <img src="images/img8.png">
+    <img src="images/img9.png">
+    <img src="images/img10.png">
+    <img src="images/img11.png">
+    <img src="images/img12.png">
+    <img src="images/img13.png">
+    <img src="images/img14.png">
+    <img src="images/img15.png">
+    <img src="images/img16.png">
+    <img src="images/img17.png">
+    <img src="images/img18.png">
+    <img src="images/img19.png">
+    <img src="images/img20.png">
+  </div>
+  <button onclick="next()">One more thing 😌</button>
+</section>
+
+<!-- LETTER -->
+<section>
+  <div class="letter">
+    <h1>My Darling</h1>
+    <p id="typedLetter"></p>
+    <div class="signature">Always yours 💙</div>
+    <button onclick="next()">One last question</button>
+  </div>
+</section>
+
+<!-- CHOICE -->
+<section class="choice">
+  <h1>Shall we keep choosing each other? 💙</h1>
+  <button onclick="goFinal()">YES</button>
+  <button id="noBtn">No</button>
+  <div class="popup" id="popup"></div>
+</section>
+
+<!-- FINAL -->
+<section>
+  <div class="final-card">
+    <img src="images/img9.png">
+    <p class="final-caption">I Loveeee youuu so much ❤️</p>
+  </div>
+</section>
+
+<script>
+const sections = document.querySelectorAll("section");
+let index = 0;
+
+function next() {
+  sections[index].classList.remove("active");
+  index++;
+  sections[index].classList.add("active");
+}
+
+function goFinal() {
+  sections[index].classList.remove("active");
+  index = sections.length - 1;
+  sections[index].classList.add("active");
+}
+
+/* Hearts */
+setInterval(() => {
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.innerText = "💙";
+  h.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 9000);
+}, 1200);
+
+/* Fade gallery images */
+const imgs = document.querySelectorAll(".gallery img");
+imgs.forEach((img, i) => {
+  setTimeout(() => img.classList.add("show"), i * 120);
+});
+
+/* Letter typing */
+const letterText = `
+Nikki, my Babuuu 💙
+
+Three years.
+Not perfect.
+Not easy.
+But real.
+
+“Love is patient, love is kind.
+It always protects, always trusts,
+always hopes, always perseveres.”
+
+You don’t have to shine every day.
+You don’t have to be strong every moment.
+
+I love you in the quiet.
+I love you in the unsure.
+I love you in the becoming.
+
+Still choosing.
+Still us.
+`;
+
+let c = 0;
+function typeLetter() {
+  if (c < letterText.length) {
+    document.getElementById("typedLetter").innerHTML += letterText.charAt(c);
+    c++;
+    setTimeout(typeLetter, 32);
+  }
+}
+
+const observer = new IntersectionObserver(e => {
+  if (e[0].isIntersecting) {
+    typeLetter();
+    observer.disconnect();
+  }
+});
+observer.observe(document.querySelector(".letter"));
+
+/* NO button logic */
+const noBtn = document.getElementById("noBtn");
+const popup = document.getElementById("popup");
+const messages = [
+  "Nice try 😌",
+  "Nope",
+  "Still not an option 💙",
+  "You’re stuck with me 😂"
+];
+let tries = 0;
+
+noBtn.addEventListener("mouseover", () => {
+  tries++;
+  noBtn.style.left = Math.random() * 70 + "vw";
+  noBtn.style.top = Math.random() * 60 + "vh";
+  popup.innerText = messages[Math.min(tries - 1, messages.length - 1)];
+});
+</script>
+
 </body>
 </html>
